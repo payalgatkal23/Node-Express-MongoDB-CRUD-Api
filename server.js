@@ -20,10 +20,19 @@ app.get("/", (req, res) => {
   res.send("hello 1");
 });
 
+//add 
 app.post("/adduser", async (req, res) => {
   const newUser = await customer.create(req.body);
   res.send(newUser);
 });
+
+//read
+app.get("/readuser", async (req, res) => {
+ const read=await customer.find();
+ res.send(read);
+});
+
+
 
 app.listen(3000, () => {
   console.log(`server is running on port ${PORT}`);
