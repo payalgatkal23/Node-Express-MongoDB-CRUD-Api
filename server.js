@@ -42,7 +42,7 @@ app.delete("/deleteuser/:name", async (req, res) => {
 app.put("/updateuser", async (req, res) => {
   const up = await customer.updateOne(
     { name: req.body.name },
-    { $set: {req.body} },
+    { $set: req.body },
   );
   res.send(up);
 });
