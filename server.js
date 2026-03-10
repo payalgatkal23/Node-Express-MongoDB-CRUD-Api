@@ -1,6 +1,6 @@
 const express=require('express');
 const mongoose=require('mongoose');
-const User=require('./models/user');
+const customer=require('./models/user');
 
 const app=express();
 const PORT=3000;
@@ -13,6 +13,16 @@ mongoose.connect("mongodb://localhost:27017/crudapp").then(()=>{
 
 app.use(express.json());
 
+app.get('/',(req,res)=>{
+    res.send("hello 1");
+})
+
+app.post('/adduser',async(req,res)=>{
+res.send("adduser");
+})
+
 app.listen(3000,()=>{
     console.log(`server is running on port ${PORT}`)
-})
+});
+
+
