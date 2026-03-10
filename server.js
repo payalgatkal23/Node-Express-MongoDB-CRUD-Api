@@ -32,7 +32,11 @@ app.get("/readuser", async (req, res) => {
  res.send(read);
 });
 
-
+//delete
+app.delete("/deleteuser/:name", async (req, res) => {
+ const del=await customer.deleteOne({ name: req.params.name });
+ res.send(del);
+});
 
 app.listen(3000, () => {
   console.log(`server is running on port ${PORT}`);
