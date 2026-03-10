@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
   res.send("hello 1");
 });
 
-//add 
+//add
 app.post("/adduser", async (req, res) => {
   const newUser = await customer.create(req.body);
   res.send(newUser);
@@ -28,14 +28,23 @@ app.post("/adduser", async (req, res) => {
 
 //read
 app.get("/readuser", async (req, res) => {
- const read=await customer.find();
- res.send(read);
+  const read = await customer.find();
+  res.send(read);
 });
 
 //delete
 app.delete("/deleteuser/:name", async (req, res) => {
- const del=await customer.deleteOne({ name: req.params.name });
- res.send(del);
+  const del = await customer.deleteOne({ name: req.params.name });
+  res.send(del);
+});
+
+//update
+app.put("/updateuser", async (req, res) => {
+  const up = await customer.updateOne(
+    { name: req.body.name },
+    { $set: {req.body} },
+  );
+  res.send(up);
 });
 
 app.listen(3000, () => {
