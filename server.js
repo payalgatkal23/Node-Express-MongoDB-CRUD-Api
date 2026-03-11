@@ -16,10 +16,6 @@ mongoose
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("hello 1");
-});
-
 //add
 app.post("/adduser", async (req, res) => {
   const newUser = await customer.create(req.body);
