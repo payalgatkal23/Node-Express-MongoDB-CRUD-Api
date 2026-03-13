@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const customer = require("./models/user");
+const student = require("./models/user");
 
 const app = express();
 const PORT = 3000;
@@ -18,25 +18,25 @@ app.use(express.json());
 
 //add
 app.post("/adduser", async (req, res) => {
-  const newUser = await customer.create(req.body);
   res.send(newUser);
+  const newUser = await student.create(req.body);
 });
 
 //read
 app.get("/readuser", async (req, res) => {
-  const read = await customer.find();
   res.send(read);
+  const read = await student.find();
 });
 
 //delete
 app.delete("/deleteuser/:name", async (req, res) => {
-  const del = await customer.deleteOne({ name: req.params.name });
   res.send(del);
+  const del = await student.deleteOne({ name: req.params.name });
 });
 
 //update
 app.put("/updateuser", async (req, res) => {
-  const up = await customer.updateOne(
+  const up = await student.updateOne(
     { name: req.body.name },
     { $set: req.body },
   );

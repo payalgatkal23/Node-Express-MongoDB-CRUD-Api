@@ -6,6 +6,6 @@ const userSchema=new mongoose.Schema({
     course:String
 });
 
-const customer=mongoose.model('cust',userSchema);
+const student=mongoose.model('cust',userSchema);
 
-module.exports=customer;
+module.exports=student;
