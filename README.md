@@ -1,4 +1,4 @@
-# User Management CRUD API
+# Student Management CRUD API
 
 A simple RESTful API built using **Node.js, Express.js, and MongoDB** to perform CRUD (Create, Read, Update, Delete) operations on user data.
 
@@ -9,19 +9,19 @@ A simple RESTful API built using **Node.js, Express.js, and MongoDB** to perform
 - Mongoose
 
 ## Features
-- Add new user
-- Get all users
-- Update user details
-- Delete user
+- Add new student
+- Get all student
+- Update student details
+- Delete student
 
 ## API Endpoints
 
-| Method | Endpoint          | Description         |
-|--------|-------------------|---------------------|
-| POST   | /adduser          | Add new user        |
-| GET    | /readuser         | Get all users       |
-| PUT    | /updateuser       | Update user         |
-| DELETE | /deleteuser/:name | Delete user by name |
+| Method | Endpoint          | Description            |
+|--------|-------------------|------------------------|
+| POST   | /adduser          | Add new student        |
+| GET    | /readuser         | Get all student        |
+| PUT    | /updateuser       | Update student         |
+| DELETE | /deleteuser/:name | Delete student by name |
 
 ## Run Project
 
